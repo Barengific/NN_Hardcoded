@@ -10,9 +10,9 @@ bias = 2
 out = (ins[0]*ws[0] +
        ins[1]*ws[1] +
        ins[2]*ws[2] + bias)
-#print(out)
+# print(out)
 
-#basic single neuron+
+#basic single neuron + single layer
 ins = [1.0, 2.0, 3.0, 2.5]
 ws = [0.2, 0.8, -0.5, 1.0]
 bias = 2.0
@@ -22,7 +22,7 @@ out = (ins[0]*ws[0] +
        ins[3]*ws[3] + bias)
 #print(out)
 
-#three neurons
+#three neurons + single layer
 ins = [1, 2, 3, 2.5]
 ws1 = [0.2, 0.8, -0.5, 1]
 ws2 = [0.5, -0.91, 0.26, -0.5]
@@ -49,6 +49,7 @@ out = [
 #print(out)
 
 
+#three neurons + single layer + loops used
 ins = [1, 2, 3, 2.5]
 ws = [[0.2, 0.8, -0.5, 1],
       [0.5, -0.91, 0.26, -0.5],
@@ -71,10 +72,19 @@ for n_ws, n_bias in zip(ws, biases):
     n_out += n_bias
     # Put neuron’s result to the layer’s output list
     layer_out.append(n_out)
-print(layer_out)
 
+# print(layer_out)
 
+# single neuron + single layer + numpy
+import numpy as np
 
+inputs = [1,2,3,2.5]
+weights = [0.2,0.8,-0.5,1]
+bias = 2
+
+out = np.dot(weights, inputs) + bias
+
+# print(out)
 
 
 
