@@ -5,7 +5,6 @@
 
 import numpy as np
 
-
 # 2 layer with 3 neurons
 ins = [[1,2,3,2.5],
          [2.,5.,-1.,2],
@@ -24,6 +23,15 @@ biases2 = [-1,2,-0.5]
 out1 = np.dot(ins,np.array(ws).T)+biases
 out2 = np.dot(out1,np.array(ws2).T)+biases2
 
-print(out2)
+# print(out2)
 
+# print(np.random.randn(5,5))
 
+n_ins = 2
+n_neu = 4
+
+ws = 0.01 * np.random.randn(n_ins, n_neu)
+biases = np.zeros((1, n_neu))
+
+print(ws)
+print(biases)
